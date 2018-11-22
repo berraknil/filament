@@ -19,8 +19,9 @@
 namespace filamat {
 
 MaterialTextChunk::MaterialTextChunk(const std::vector<TextEntry> &entries,
-                                     LineDictionary &dictionary) :
-    TextChunk(ChunkType::MaterialGlsl, entries, dictionary) {
+                                     LineDictionary &dictionary,
+                                     ChunkType chunkType) :
+    TextChunk(chunkType, entries, dictionary) {
 }
 
 void MaterialTextChunk::writeEntryAttributes(size_t entryIndex, Flattener& f) {

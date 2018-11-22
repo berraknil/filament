@@ -552,8 +552,8 @@ Package MaterialBuilder::build() noexcept {
     }
 
     // Emit GLSL chunks (TextDictionaryReader and MaterialGlslChunk).
-    filamat::DictionaryTextChunk dicGlslChunk(glslDictionary);
-    MaterialTextChunk glslChunk(glslEntries, glslDictionary);
+    filamat::DictionaryTextChunk dicGlslChunk(glslDictionary, ChunkType::DictionaryGlsl);
+    MaterialTextChunk glslChunk(glslEntries, glslDictionary, ChunkType::MaterialGlsl);
     if (!glslEntries.empty()) {
         container.addChild(&dicGlslChunk);
         container.addChild(&glslChunk);
